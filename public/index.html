@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Milestone - H8</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Header Navigation -->
+      <header>
+        <nav>
+          <div class="nav-container">
+            <a class="logo" href="#" onclick="show_page('home_page')"
+              >Raudha Digital</a
+            >
+            <div class="nav-links">
+              <a href="#" onclick="show_page('home_page')">Home</a>
+              <a
+                class="hidden"
+                id="service_nav_link"
+                href="#"
+                onclick="show_page('service_page')"
+                >Services</a
+              >
+              <a href="#" onclick="show_page('gallery_page')">Gallery</a>
+              <a href="#" onclick="show_page('about_page')">About Us</a>
+              <a
+                class="hidden"
+                id="contact_nav_link"
+                href="#"
+                onclick="show_page('contact_page')"
+                >Contact Us</a
+              >
+              <a
+                class="hidden"
+                id="admin_nav_link"
+                href="#"
+                onclick="show_page('admin_dashboard_page')"
+                >Admin</a
+              >
+              <a id="login_nav_link" href="#" onclick="show_page('login_page')"
+                >Login</a
+              >
+              <a class="hidden" id="logout_nav_link" href="#" onclick="logout()"
+                >Logout</a
+              >
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main content -->
+      <main class="container">
+        <!-- Homepage -->
+        <div class="page active" id="home_page">
+          <h1>Raudha Digital</h1>
+          <p>Transforming visions into digital realities.</p>
+          <div class="service-overview">
+            <h3>Our Core Services</h3>
+            <div class="service-cards">
+              <div class="card service-card-item">
+                <h4>Branding & Creative</h4>
+                <p>Building strong and visually appealing brand identities.</p>
+              </div>
+              <div class="card service-card-item">
+                <h4>Web & App Development</h4>
+                <p>
+                  Creating responsive and innovative websites and applications.
+                </p>
+              </div>
+              <div class="card service-card-item">
+                <h4>Digital Marketing</h4>
+                <p>
+                  Digital marketing strategies to increase reach and conversion.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="btn primary" id="explore_services_btn">
+            Explore All Services
+          </button>
+        </div>
+
+        <!-- Services -->
+        <div class="page" id="service_page">
+          <h1>Our Services</h1>
+          <p>
+            Branding & Creative, Web & App Dev, Digital Marketing, Data &
+            Analytics.
+          </p>
+          <div class="card calculator">
+            <h3>Service Cost Calculator</h3>
+            <label
+              >Select Service:
+              <select class="input-field" id="service_type">
+                <option value="branding">Branding & Creative</option>
+                <option value="development">Website & App Development</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="analytics">Data & Analytics</option>
+                <option value="consulting">Consulting & Strategy</option>
+              </select>
+            </label>
+            <label
+              >Project Scale:
+              <select class="input-field" id="project_scale">
+                <option value="small">Small Project</option>
+                <option value="medium">Medium Project</option>
+                <option value="large">Large Project</option>
+                <option value="enterprise">Enterprise Solution</option>
+              </select>
+            </label>
+            <button class="btn primary" onclick="calculate_price()">
+              Calculate Price
+            </button>
+            <div class="price-display" id="price_result">$0.00</div>
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="page" id="gallery_page">
+          <h1>Our Gallery</h1>
+          <p>Explore our portfolio of successful projects and creative work.</p>
+          <div class="gallery-grid">
+            <div class="card gallery-item">
+              <h4>Brand Identity for TechCorp</h4>
+              <p>Creating a modern brand identity.</p>
+            </div>
+            <div class="card gallery-item">
+              <h4>E-commerce Website</h4>
+              <p>Full-stack development of online shopping platform.</p>
+            </div>
+            <div class="card gallery-item">
+              <h4>Mobile App UI Design</h4>
+              <p>User interface design for fitness application.</p>
+            </div>
+            <div class="card gallery-item">
+              <h4>Social Media Campaign</h4>
+              <p>Marketing campaign for product launch.</p>
+            </div>
+            <div class="card gallery-item">
+              <h4>Data Visualization</h4>
+              <p>Interactive dashboards for analytics.</p>
+            </div>
+            <div class="card gallery-item">
+              <h4>Corporate Branding</h4>
+              <p>Complete rebranding for financial services.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- About us -->
+        <div class="page" id="about_page">
+          <h1>About Us</h1>
+          <div class="about-content">
+            <h3>Our Story</h3>
+            <p>
+              Raudha Digital was founded in 2010 with a vision to help
+              businesses thrive in the digital landscape. Our journey began with
+              a small team of passionate designers and developers who believed
+              in the transformative power of digital solutions.
+            </p>
+            <p>
+              Over the years, we've helped hundreds of clients across various
+              industries transform their ideas into successful digital products
+              and campaigns. Our commitment to quality, innovation, and client
+              satisfaction has been the driving force behind our continuous
+              growth and success in the competitive digital market.
+            </p>
+            <p>
+              We pride ourselves on delivering exceptional results that not only
+              meet but exceed our clients' expectations. Our team of experts
+              stays at the forefront of technological advancements to ensure we
+              provide cutting-edge solutions that drive real business value.
+            </p>
+            <h3>Our Values</h3>
+            <div class="values-grid">
+              <div class="card value-item text-center">
+                <h4>Innovation</h4>
+                <p>
+                  We embrace new technologies and creative approaches to solve
+                  complex business challenges.
+                </p>
+              </div>
+              <div class="card value-item text-center">
+                <h4>Quality</h4>
+                <p>
+                  We never compromise on quality and always strive for
+                  excellence in everything we deliver.
+                </p>
+              </div>
+              <div class="card value-item text-center">
+                <h4>Collaboration</h4>
+                <p>
+                  We believe in the power of teamwork and building strong
+                  partnerships with our clients.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="page" id="contact_page">
+          <h1>Contact Us</h1>
+          <form id="contact_form" class="card">
+            <h3>Send us a Message</h3>
+            <label
+              >Full Name:<input
+                type="text"
+                class="input-field"
+                id="full_name"
+                name="full_name"
+                required
+            /></label>
+            <label
+              >Email Address:<input
+                type="email"
+                class="input-field"
+                id="email"
+                name="email"
+                required
+            /></label>
+            <label
+              >Service Interest:
+              <select
+                class="input-field"
+                id="service_interest"
+                name="service_interest"
+              >
+                <option>Branding & Creative</option>
+                <option>Website & App Development</option>
+                <option>Digital Marketing</option>
+                <option>Data & Analytics</option>
+                <option>Consulting & Strategy</option>
+              </select>
+            </label>
+            <label
+              >Message:<textarea
+                rows="4"
+                class="input-field"
+                id="message"
+                name="message"
+                required
+              ></textarea>
+            </label>
+            <button type="submit" class="btn primary">Send Message</button>
+            <div class="feedback-message" id="contact_form_feedback"></div>
+            <div class="contact-info">
+              <h4>Contact Information</h4>
+              <p><strong>Email:</strong> contact@raudhadigital.com</p>
+              <p><strong>Phone:</strong> +62 21 1234 5678</p>
+              <p>
+                <strong>Address:</strong> Jl. Digital No. 123, Jakarta,
+                Indonesia
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Login -->
+        <div class="page" id="login_page">
+          <h1>Login</h1>
+          <form id="login_form" class="card">
+            <label
+              >Email Address:<input
+                type="email"
+                class="input-field"
+                id="login_email"
+                name="email"
+                required
+            /></label>
+            <label
+              >Password:<input
+                type="password"
+                class="input-field"
+                id="login_password"
+                name="password"
+                required
+            /></label>
+            <button type="submit" class="btn primary">Login</button>
+            <div class="feedback-message" id="login_form_feedback"></div>
+            <p class="form-link">
+              Don't have an account?
+              <a href="#" onclick="show_page('register_page')">Register here</a>
+            </p>
+          </form>
+        </div>
+
+        <!-- Registration -->
+        <div class="page" id="register_page">
+          <h1>Register</h1>
+          <form id="register_form" class="card">
+            <label
+              >Full Name:<input
+                type="text"
+                class="input-field"
+                id="register_full_name"
+                name="full_name"
+                required
+            /></label>
+            <label
+              >Email Address:<input
+                type="email"
+                class="input-field"
+                id="register_email"
+                name="email"
+                required
+            /></label>
+            <label
+              >Password:<input
+                type="password"
+                class="input-field"
+                id="register_password"
+                name="password"
+                required
+            /></label>
+            <label
+              >Confirm Password:<input
+                type="password"
+                class="input-field"
+                id="confirm_password"
+                name="confirm_password"
+                required
+            /></label>
+            <button type="submit" class="btn primary">Register</button>
+            <div class="feedback-message" id="register_form_feedback"></div>
+            <p class="form-link">
+              Already have an account?
+              <a href="#" onclick="show_page('login_page')">Login here</a>
+            </p>
+          </form>
+        </div>
+
+        <!-- Admin dashboard -->
+        <div class="page" id="admin_dashboard_page">
+          <h1>Admin Dashboard</h1>
+          <p>Welcome, Admin! Here you can manage contact messages.</p>
+          <h3>Contact Messages</h3>
+          <div id="contact_messages_list"><p>Loading messages...</p></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <p>&copy; 2025 Raudha Digital. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
